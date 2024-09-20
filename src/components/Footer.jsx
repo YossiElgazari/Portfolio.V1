@@ -14,7 +14,7 @@ const Footer = () => {
         // Fetch GitHub data (stars and forks)
         const fetchGitHubData = async () => {
             try {
-                const response = await fetch('https://api.github.com/repos/YossiElgazari/Hangman', {
+                const response = await fetch('https://api.github.com/repos/YossiElgazari/Portfolio.V1', {
                     headers: {
                         Authorization: `token ${token}`,
                     },
