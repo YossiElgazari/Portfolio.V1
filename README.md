@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/f48eb35c-0634-4321-9fcb-60bb4b94aac3)
+![image](https://github.com/user-attachments/assets/ea4f29b5-73c4-48a2-9933-62eff72422f9)
 
 # Yossi Elgazari - Portfolio
 
