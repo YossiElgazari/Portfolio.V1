@@ -7,7 +7,7 @@ const NavLink = ({ href, name, onClick }) => {
 
   useEffect(() => {
     // Initialize the GSAP animation for the slashes
-    gsap.set(slashRef.current, { opacity: 0, x: -5 }); // Hide the slashes initially
+    gsap.set(slashRef.current, { opacity: 0, x: -5 }); 
   }, []);
 
   const handleMouseEnter = () => {

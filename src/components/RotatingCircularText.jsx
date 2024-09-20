@@ -10,6 +10,7 @@ const RotatingCircularText = ({ introCompleted }) => {
     window.location.href = `mailto:${email}`;
   };
 
+  // Rotating circular text animation
   useEffect(() => {
     if (circlingText.current) {
       gsap.set(circlingText.current, { x: "100%", opacity: 0 });

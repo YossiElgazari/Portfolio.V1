@@ -7,10 +7,9 @@ const ResumeButton = () => {
 
     // If the browser blocks the popup, this will fail
     if (newWindow) {
-      newWindow.opener = null; // Prevent access to the opening window
-      newWindow.focus(); // Focus the new window/tab
+      newWindow.opener = null; 
+      newWindow.focus();
     } else {
-      // Fallback for when the popup is blocked
       alert('Please allow popups for this website to view the resume.');
     }
   };

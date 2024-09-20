@@ -39,7 +39,7 @@ const XButton = ({ className = '', strokeOnly = false, onClick, ...props }) => {
 
 XButton.propTypes = {
     className: PropTypes.string,
-    strokeOnly: PropTypes.bool,  // Toggle between stroke with shadow and filled button
+    strokeOnly: PropTypes.bool, 
     onClick: PropTypes.func.isRequired,
 };
 

@@ -58,9 +58,9 @@ const GitHubStats = ({ complete }) => {
             // Fetch commits for the repo
             const commitsResponse = await fetch(`${repo.commits_url.replace('{/sha}', '')}?per_page=30`, { headers });
 
-            // Skip over repositories that return a 409 conflict status
+            // Skip over repositories that return a 409 conflict status (no commits)
             if (commitsResponse.status === 409) {
-              continue; // Skip this repo silently without logging or erroring
+              continue; 
             }
 
             if (commitsResponse.ok) {
@@ -79,7 +79,7 @@ const GitHubStats = ({ complete }) => {
               }
             }
           } catch {
-            // Silently ignore errors, no console logs, and continue
+            // continue
           }
         }
 
@@ -94,9 +94,6 @@ const GitHubStats = ({ complete }) => {
 
     fetchGithubData();
   }, [token]);
-
-
-
 
   // Animate Dots while loading
   useEffect(() => {

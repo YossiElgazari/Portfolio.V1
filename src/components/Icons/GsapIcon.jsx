@@ -24,7 +24,7 @@ const GsapIcon = ({ className = "", ...props }) => {
         className="absolute inset-0 w-9 h-9 md:w-12 md:h-12"
         style={{
           fill: lightGrey,
-          opacity: isHovered ? 0 : 1, // Hide on hover
+          opacity: isHovered ? 0 : 1,
           transition: "opacity 0.3s ease-in-out",
         }}
       >
@@ -209,7 +209,7 @@ const GsapIcon = ({ className = "", ...props }) => {
         xmlns="http://www.w3.org/2000/svg"
         className="absolute inset-0 w-9 h-9 md:w-12 md:h-12"
         style={{
-          opacity: isHovered ? 1 : 0, // Show on hover
+          opacity: isHovered ? 1 : 0,
           transition: "opacity 0.3s ease-in-out",
         }}
       >

@@ -82,7 +82,7 @@ const Contact = () => {
     }, userId)
       .then(() => {
         setLoading(false);
-        setSuccessMessage('Your message has been sent successfully!');
+        setSuccessMessage('Sent!');
         setErrorMessage('');
         setFormData({
           name: '',

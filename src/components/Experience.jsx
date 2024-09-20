@@ -23,11 +23,9 @@ const timelineData = [
 
 const Experience = () => {
   useEffect(() => {
-    // Initialize gsap.matchMedia for responsive breakpoints
     let mm = gsap.matchMedia();
 
     mm.add("(min-width: 1024px)", () => {
-      // Create a timeline for the experience section
       const tl = gsap.timeline({
         scrollTrigger: {
           trigger: '#experience',
@@ -38,7 +36,7 @@ const Experience = () => {
         }
       });
 
-      // Animate the heading from the left
+      // Animation for the heading, arrow, bodyline, timeline, and tail
       tl.fromTo(".exp-heading", { opacity: 0, x: -100 }, { opacity: 1, x: 0, duration: 1, ease: "power2.out" })
         .fromTo(".arrowhead", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, '-=0.8')
         .fromTo(".bodyline", { height: 0 }, { height: '100%', duration: 0.5, ease: "power2.out" }, '-=0.5')
@@ -56,6 +54,7 @@ const Experience = () => {
         );
       });
 
+      // Hover effect for the timeline cards
       timelineData.forEach((_, index) => {
         const directionClass = index % 2 === 0 ? `.timeline-card-left-${index}` : `.timeline-card-right-${index}`;
         const hoverDirection = index % 2 === 0 ? 20 : -70; // Translate 60% based on left or right

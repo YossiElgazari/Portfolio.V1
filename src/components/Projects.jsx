@@ -83,37 +83,34 @@ const Projects = () => {
         trigger: '#projects',
         start: '-40% top',
         end: 'bottom bottom',
-        scrub: 1, // Disable scrub for mobile devices
+        scrub: 1,
         once: true,
       },
     });
 
-    // Animate heading
     tl.fromTo(
       ".projects-heading",
       { opacity: 0, x: -100 },
       { opacity: 1, x: 0, ease: "power2.out", duration: 1 }
     );
 
-    // Animate each project card based on the index
     projects.slice(0, visibleProjects).forEach((_, index) => {
       tl.fromTo(
         `.project-card-${index}`,
-        { y: -50, opacity: 0 }, // Start each card offscreen
+        { y: -50, opacity: 0 }, 
         {
           y: 0,
           opacity: 1,
           ease: 'none',
           duration: 1,
         },
-        '-=0.1' // Overlap animations slightly for smoother flow
+        '-=0.1' 
       );
     });
 
-    // Animate the button separately to avoid being affected by project card animations
     tl.fromTo(
       ".mybutton",
-      { opacity: 0, y: -50 }, // Starting with a small translation
+      { opacity: 0, y: -50 }, 
       { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
     );
   }, [visibleProjects]);

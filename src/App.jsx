@@ -13,8 +13,6 @@ import Footer from './components/Footer';
 import { gsap } from 'gsap';
 
 import 'normalize.css';
-import './App.css';
-
 
 function App() {
   const [introCompleted, setIntroCompleted] = useState(false);

@@ -13,9 +13,9 @@ const Intro = ({ onIntroComplete }) => {
     const paths = gsap.utils.toArray('#welcome path');
     const logo = document.getElementById('logoz');
     logo.style.opacity = 1;
+
     const tl = gsap.timeline({ defaults: { ease: 'ease.in', duration: 0.4, stagger: 0.1 } });
-
-
+    
     tl.fromTo(paths[0], { x: 800, y: -800, opacity: 0 }, { x: 0, y: 0, opacity: 1 })
       .fromTo(paths[1], { x: 300, y: -300, opacity: 0 }, { x: 0, y: 0, opacity: 1 })
       .fromTo([paths[2]], { y: 300, opacity: 0 }, { y: 0, opacity: 1 })

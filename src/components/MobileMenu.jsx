@@ -12,7 +12,8 @@ const MobileMenu = ({ isOpen, navLinks, toggleMenu }) => {
 
   useEffect(() => {
     let timeout;
-
+    
+    // Prevent scrolling when the menu is open
     if (isOpen) {
       setIsMounted(true);
       setIsFullyClosed(false);
@@ -30,10 +31,14 @@ const MobileMenu = ({ isOpen, navLinks, toggleMenu }) => {
   useEffect(() => {
     const handleScroll = () => {
       navLinks.forEach(link => {
+        // Get the section based on the href attribute of the link
         const section = document.getElementById(link.href.slice(1));
         if (section) {
+          // Get the position of the section in the viewport
           const rect = section.getBoundingClientRect();
+          // Set active section based on the position of the section in the viewport
           if (rect.top <= 150 && rect.bottom >= 150) {
+            // Set the active section only if it's different from the current active section
             setActiveSection(link.href);
           }
         }

@@ -18,7 +18,6 @@ const Logo = ({ className = '', strokeOnly = false, animateOnHover = false, ...p
         const x = [25, 25, 0, 0, -25, -25];
         const y = [-25, -25, 25, 25, -25, -25];
 
-
         // Hover animation
         const paths = gsap.utils.toArray('.navbar #logo path');
         const handleMouseEnter = () => {

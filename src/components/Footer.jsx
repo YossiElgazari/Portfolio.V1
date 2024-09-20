@@ -11,6 +11,7 @@ const Footer = () => {
     token = import.meta.env.VITE_GITHUB_TOKEN;
 
     useEffect(() => {
+        // Fetch GitHub data (stars and forks)
         const fetchGitHubData = async () => {
             try {
                 const response = await fetch('https://api.github.com/repos/YossiElgazari/Hangman', {
@@ -41,7 +42,7 @@ const Footer = () => {
     return (
         <footer className="py-6 px-4 flex flex-col items-center justify-center bg-secondary">
             <a
-                href="https://github.com/YossiElgazari/Hangman"
+                href="https://github.com/YossiElgazari/Portfolio.V1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-center group relative top-2"

@@ -53,7 +53,7 @@ const About = () => {
         x: 0,
         duration: 1,
         ease: "power2.out"
-      }, "-=0.7") // Overlaps with the end of the previous animation
+      }, "-=0.7") 
 
       // Title3 and Paragraph3 come from the left, staggered
       .fromTo([".title3", ".para3"], {
@@ -80,7 +80,7 @@ const About = () => {
         }
       }, "-=1")
 
-      // GitHub Stats animation (y=-20 and opacity)
+      // GitHub Stats animation
       .fromTo(".stats", {
         opacity: 0,
         y: -20,
