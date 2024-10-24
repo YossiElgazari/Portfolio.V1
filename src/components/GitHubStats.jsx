@@ -143,19 +143,17 @@ const GitHubStats = ({ complete }) => {
   }
 
   return (
-    <div className="w-full bg-secondary">
-      <div className="relative container mx-auto px-6 lg:px-8 xl:px-12">
-
+    <div className="w-full bg-secondary 380px:py-8 ">
         {/* GitHub Stats Cards */}
-        <div className="stats relative grid grid-cols-1 py-2 380px:py-0 380px:grid-cols-3">
-          {/* Low Opacity Background */}
+        <div className="stats relative flex justify-between ">
+        {/* Low Opacity Background */}
           <div className="github absolute font-montserrat flex justify-center font-bold items-center h-full w-full text-headline4 gap-2 md:gap-4 md:text-headline3 opacity-5 select-none">
             <span className="hidden 380px:inline">Courtesy of GitHub</span>
             <GitHubIcon className="w-48 h-48 380px:w-10 380px:h-10 xl:w-14 xl:h-14" />
           </div>
 
           {/* Total Repositories */}
-          <div className="repos z-10 p-1 lg:p-6 text-center">
+          <div className="repos  z-10 p-1 lg:p-6 text-center">
             <p ref={totalReposRef} className="text-5xl md:text-6xl xl:text-8xl font-bold text-lightgrey">0</p>
             <h3 className="text-body3 lg:text-body1 font-bold text-primary">Repositories</h3>
           </div>
@@ -172,7 +170,6 @@ const GitHubStats = ({ complete }) => {
             <h3 className="text-body3 lg:text-body1 font-bold text-primary">Languages</h3>
           </div>
         </div>
-      </div>
     </div>
   );
 };

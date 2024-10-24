@@ -6,11 +6,12 @@ gsap.registerPlugin(ScrollTrigger);
 
 const timelineData = [
   {
-    date: 'Future Growth',
-    role: "What's next?",
-    company: 'Still Learning',
+    date: 'October 2024 - Present',
+    role: 'Full Stack Developer',
+    company: 'IVTechLTD',
     details:
-      'I am looking to expand my knowledge in full-stack development and eager to tackle challenging and innovative projects. My goal is to grow within the tech industry and make meaningful contributions to the projects I work on.',
+      'As a Full Stack Developer at IVTechLTD, I work on a variety of projects, from front-end development to back-end services. I collaborate with cross-functional teams to design, develop, and maintain web applications. I also ensure that the applications are responsive, user-friendly, and meet the client’s requirements.',
+
   },
   {
     date: 'August 2023 – October 2023',

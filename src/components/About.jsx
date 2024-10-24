@@ -132,11 +132,13 @@ const About = () => {
             />
           </div>
         </div>
-      </div>
-      {/* GitHub Stats */}
-      <div className="stats">
+
+        <div className="stats">
         <GitHubStats complete={complete} />
       </div>
+      
+      </div>
+
     </section>
   );
 };
