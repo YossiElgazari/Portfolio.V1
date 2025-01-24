@@ -94,7 +94,7 @@ const About = () => {
 
   return (
     <section id="about" className="relative py-4 md:py-6 xl:py-12">
-      <div className="container mx-auto px-3 sm:px-6 lg:px-8 xl:px-12 2k:px-16 4k:px-24 pb-6 max-lg:overflow-x-hidden">
+      <div className="container mx-auto px-3 sm:px-6 lg:px-8 xl:px-12 2k:px-16 4k:px-24 max-lg:overflow-x-hidden">
         {/* About Heading */}
         <h1 className="about-heading text-headline2 font-bold text-white mb-6 lg:mb-0 uppercase">
           <span className="text-primary">{'//'}</span> ABOUT

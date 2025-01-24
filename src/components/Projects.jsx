@@ -134,7 +134,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className="relative py-8 md:py-12 xl:py-16 bg-secondary">
-      <div className="container mx-auto px-6 lg:px-8 xl:px-12 2k:px-16 4k:px-24">
+      <div className="container mx-auto px-3 lg:px-8 xl:px-12 2k:px-16 4k:px-24">
         <h1 className="projects-heading text-headline2 font-bold text-white mb-2 lg:mb-0 uppercase">
           <span className="text-primary ">{'//'}</span> Projects
         </h1>
