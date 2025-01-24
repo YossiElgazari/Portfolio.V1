@@ -40,8 +40,8 @@ const GitHubStats = ({ complete }) => {
       try {
         const data = await fetchGithubData(token);
         setGithubStats(data);
-      } catch (err) {
-        setError(err.message);
+      } catch {
+        setError("Error Fetching Data");
       } finally {
         setLoading(false);
       }
