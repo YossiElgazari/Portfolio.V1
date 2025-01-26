@@ -15,8 +15,39 @@ const GitHubStats = ({ complete }) => {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const token = import.meta.env.VITE_GITHUB_TOKEN || null;
 
-  const token = import.meta.env.VITE_GITHUB_TOKEN;
+
+  useEffect(() => {
+    if (!token) {
+      setError('Error Fetching Data');
+      setLoading(false);
+      return;
+    }
+
+    const loadData = async () => {
+      try {
+        const data = await fetchGithubData(token);
+        setGithubStats(data);
+      } catch {
+        setError("Error Fetching Data");
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadData();
+  }, [token]);
+
+  useEffect(() => {
+    if (!totalCommitsRef.current || !totalReposRef.current || !languagesRef.current) return;
+
+    if (!loading && complete) {
+      animateCount(totalReposRef, githubStats.totalRepos, 2);
+      animateCount(totalCommitsRef, githubStats.totalCommits, 2);
+      animateCount(languagesRef, Object.keys(githubStats.languages).length, 2);
+    }
+  }, [loading, githubStats, complete]);
 
   // Function to animate numbers counting upwards
   const animateCount = (ref, value, duration = 2) => {
@@ -35,28 +66,9 @@ const GitHubStats = ({ complete }) => {
     );
   };
 
-  useEffect(() => {
-    const loadData = async () => {
-      try {
-        const data = await fetchGithubData(token);
-        setGithubStats(data);
-      } catch {
-        setError("Error Fetching Data");
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadData();
-  }, [token]);
-
-  useEffect(() => {
-    if (!loading && complete) {
-      animateCount(totalReposRef, githubStats.totalRepos, 2);
-      animateCount(totalCommitsRef, githubStats.totalCommits, 2);
-      animateCount(languagesRef, Object.keys(githubStats.languages).length, 2);
-    }
-  }, [loading, githubStats, complete]);
+  if (error) {
+    return;
+  }
 
   if (loading) {
     return (
@@ -67,18 +79,6 @@ const GitHubStats = ({ complete }) => {
             <span className="dot">.</span>
             <span className="dot">.</span>
             <span className="dot">.</span>
-          </div>
-        </div>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="w-full bg-secondary my-4">
-        <div className="container mx-auto text-center px-2 py-2 lg:px-8 xl:px-12 lg:py-8 xl:my-12">
-          <div className="text-body1 font-bold text-lightgrey lg:mb-0 uppercase">
-            {error}
           </div>
         </div>
       </div>

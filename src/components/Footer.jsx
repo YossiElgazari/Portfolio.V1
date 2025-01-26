@@ -4,14 +4,15 @@ import { useEffect, useState } from 'react';
 const Footer = () => {
     const [stars, setStars] = useState(0);
     const [forks, setForks] = useState(0);
-    const [error, setError] = useState(null);
-
     let token = null;
 
     token = import.meta.env.VITE_GITHUB_TOKEN;
 
     useEffect(() => {
-        // Fetch GitHub data (stars and forks)
+        if (!token) {
+            return;
+        }
+
         const fetchGitHubData = async () => {
             try {
                 const response = await fetch('https://api.github.com/repos/YossiElgazari/Portfolio.V1', {
@@ -27,17 +28,14 @@ const Footer = () => {
                 const data = await response.json();
                 setStars(data.stargazers_count);
                 setForks(data.forks_count);
-            } catch (error) {
-                setError(error.message);
+            } catch {
+                setStars(0);
+                setForks(0);
             }
         };
 
         fetchGitHubData();
     }, [token]);
-
-    if (error) {
-        return <p>Error: {error}</p>;
-    }
 
     return (
         <footer className="py-6 px-4 flex flex-col items-center justify-center bg-secondary">
