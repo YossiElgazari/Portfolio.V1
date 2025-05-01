@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import GitHubStats from '../GitHubStats';
+import { useEffect } from 'react';
 import { HiAnnotation } from "react-icons/hi";
 import { HiFlag } from "react-icons/hi2";
 import { BiSolidJoystick } from "react-icons/bi";
@@ -9,7 +8,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
-  const [complete, setComplete] = useState(false);
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -53,7 +51,7 @@ const About = () => {
         x: 0,
         duration: 1,
         ease: "power2.out"
-      }, "-=0.7") 
+      }, "-=0.7")
 
       // Title3 and Paragraph3 come from the left, staggered
       .fromTo([".title3", ".para3"], {
@@ -75,9 +73,6 @@ const About = () => {
         opacity: 1,
         duration: 1,
         ease: "power2.out",
-        onComplete: () => {
-          setComplete(true)
-        }
       }, "-=1")
 
       // GitHub Stats animation
@@ -132,11 +127,6 @@ const About = () => {
             />
           </div>
         </div>
-
-        <div className="stats">
-        <GitHubStats complete={complete} />
-      </div>
-      
       </div>
 
     </section>
