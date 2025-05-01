@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Experience from './components/Experience';
-import About from './components/About';
-import Projects from './components/Projects';
+import Hero from './components/Sections/Hero';
+import Experience from './components/sections/Experience';
+import About from './components/sections/About';
+import Projects from './components/sections/Projects';
 import Intro from './components/Intro';
-import Contact from './components/Contact';
+import Contact from './components/Sections/Contact';
 import RotatingCircularText from './components/RotatingCircularText';
 import Footer from './components/Footer';
 
@@ -51,7 +51,7 @@ function App() {
       <div className="min-h-[100vh]">
         {/* Intro - animation and overflow handling */}
         <Intro onIntroComplete={handleIntroComplete} />
-        
+
         {/* Main content hidden initially */}
         <div id="main">
           <Navbar introCompleted={introCompleted} />

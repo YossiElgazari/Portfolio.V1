@@ -10,15 +10,14 @@ const timelineData = [
     role: 'Full Stack Developer',
     company: 'IVTechLTD',
     details:
-      'As a Full Stack Developer at IVTechLTD, I work on a variety of projects, from front-end development to back-end services. I collaborate with cross-functional teams to design, develop, and maintain web applications. I also ensure that the applications are responsive, user-friendly, and meet the client’s requirements.',
-
+      'At IVTechLTD, I work on a range of projects including CRMs, mobile apps, and web platforms. My responsibilities include maintaining existing systems, developing new features, and ensuring solutions meet client requirements.',
   },
   {
     date: 'August 2023 – October 2023',
     role: 'Backend Engineer Intern',
     company: 'Bridgify',
     details:
-      'During my time at Bridgify, I maintained and improved backend systems using Python. I focused on API integration and data processing, ensuring systems ran efficiently. I also wrote clean, efficient, and well-documented code, which contributed to the overall success of our projects.',
+      'At Bridgify, I worked on backend systems in Python, focusing on API integrations and data processing. I optimized performance, ensured system reliability, and contributed clean, well-documented code to key projects.',
   },
 ];
 
@@ -71,10 +70,6 @@ const Experience = () => {
         });
       });
 
-
-      return () => {
-
-      };
     });
 
     // Mobile (less than 1024px) animation with slightly different settings
@@ -133,7 +128,7 @@ const Experience = () => {
               <div key={index} className="relative flex">
                 {/* Timeline Card */}
                 <div
-                  className={`group bg-secondary lg:bg-transparent border-4 rounded-xl border-darkgrey text-lightgrey p-6 transition-all duration-300 hover:rounded-xl hover:border-primary2 lg:hover:scale-110 shadow-lg
+                  className={`group relative bg-secondary lg:bg-transparent border-4 rounded-xl border-darkgrey text-lightgrey p-6 transition-all duration-300 hover:rounded-xl hover:border-primary2 lg:hover:scale-110 shadow-lg
                   ${index % 2 === 0
                       ? `timeline-card-left-${index} lg:rounded-tl-none lg:border-l-0 lg:rounded-bl-none translate-x-0 lg:translate-x-1/2 lg:hover:border-l-4`
                       : `timeline-card-right-${index} lg:rounded-tr-none lg:border-r-0 lg:rounded-br-none translate-x-0 lg:-translate-x-1/2 lg:hover:border-r-4`

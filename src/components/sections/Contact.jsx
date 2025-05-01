@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import MyButton from './MyButton';
+import MyButton from '../MyButton';
 import emailjs from '@emailjs/browser';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';

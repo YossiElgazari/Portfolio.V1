@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/TextPlugin';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import Starfield from './Starfield.jsx';
+import Starfield from '../Starfield.jsx';
 
 gsap.registerPlugin(TextPlugin, ScrollTrigger);
 
@@ -14,6 +14,11 @@ const Hero = () => {
   const firstsenRef = useRef(null);
   const scrolltext = useRef(null);
   const fallingball = useRef(null);
+  const [introWasShown] = useState(() => {
+    const lastShownDate = localStorage.getItem('intro_last_shown');
+    const currentDate = new Date().toDateString();
+    return lastShownDate === currentDate;
+  });
 
   const scrollOnClick = () => {
     window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
@@ -28,7 +33,7 @@ const Hero = () => {
     gsap.set(scrolltext.current, { opacity: 0, x: 5 });
 
     const tl = gsap.timeline({
-      delay: 3.5,
+      delay: introWasShown ? 0 : 3.5,
     });
 
     const tl2 = gsap.timeline();
@@ -74,7 +79,7 @@ const Hero = () => {
           ease: "power1.Out",
         }, '-=1.5')
     });
-  }, []);
+  }, [introWasShown]);
 
   return (
 

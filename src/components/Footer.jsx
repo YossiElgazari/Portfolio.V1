@@ -4,22 +4,12 @@ import { useEffect, useState } from 'react';
 const Footer = () => {
     const [stars, setStars] = useState(0);
     const [forks, setForks] = useState(0);
-    let token = null;
-
-    token = import.meta.env.VITE_GITHUB_TOKEN;
 
     useEffect(() => {
-        if (!token) {
-            return;
-        }
 
         const fetchGitHubData = async () => {
             try {
-                const response = await fetch('https://api.github.com/repos/YossiElgazari/Portfolio.V1', {
-                    headers: {
-                        Authorization: `token ${token}`,
-                    },
-                });
+                const response = await fetch('https://api.github.com/repos/YossiElgazari/Portfolio.V1');
 
                 if (!response.ok) {
                     throw new Error('Failed to fetch repository data');
@@ -35,7 +25,7 @@ const Footer = () => {
         };
 
         fetchGitHubData();
-    }, [token]);
+    }, []);
 
     return (
         <footer className="py-6 px-4 flex flex-col items-center justify-center bg-secondary">

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import GitHubStats from './GitHubStats';
+import GitHubStats from '../GitHubStats';
 import { HiAnnotation } from "react-icons/hi";
 import { HiFlag } from "react-icons/hi2";
 import { BiSolidJoystick } from "react-icons/bi";
