@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import Navbar from './components/Navbar';
-import Hero from './components/Sections/Hero';
+import Hero from './components/sections/Hero';
 import Experience from './components/sections/Experience';
 import About from './components/sections/About';
 import Projects from './components/sections/Projects';
