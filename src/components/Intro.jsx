@@ -63,7 +63,10 @@ const Intro = ({ onIntroComplete }) => {
         display: 'none',
         delay: 0.1,
         onComplete: () => {
-          document.getElementById('welcome').style.display = 'none';
+          const welcomeElement = document.getElementById('welcome');
+          if (welcomeElement) {
+            welcomeElement.style.display = 'none';
+          }
           gsap.killTweensOf(paths);
           document.body.classList.add('overflow-y-auto');
         },
