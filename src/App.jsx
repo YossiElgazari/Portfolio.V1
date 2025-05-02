@@ -6,7 +6,7 @@ import Experience from './components/sections/Experience';
 import About from './components/sections/About';
 import Projects from './components/sections/Projects';
 import Intro from './components/Intro';
-import Contact from './components/Sections/Contact';
+import Contact from './components/sections/Contact';
 import RotatingCircularText from './components/RotatingCircularText';
 import Footer from './components/Footer';
 
