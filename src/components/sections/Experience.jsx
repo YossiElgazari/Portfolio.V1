@@ -9,15 +9,22 @@ const timelineData = [
     date: 'October 2024 - Present',
     role: 'Full Stack Developer',
     company: 'IVTechLTD',
-    details:
-      'At IVTechLTD, I work on a range of projects including CRMs, mobile apps, and web platforms. My responsibilities include maintaining existing systems, developing new features, and ensuring solutions meet client requirements.',
+    description: 'Part of a startup-focused company, leading development across several concurrent web and mobile projects.',
+    details: [
+      'Leading the development of multiple web and mobile projects in parallel, taking ownership of the full lifecycle from architecture to deployment.',
+      'Building full-stack solutions with scalable frontend logic and performant backend services, working with technologies such as React, React Native, Node.js, Python, MongoDB, PostgreSQL and SQLite.',
+      'Integrating third-party APIs and internal systems to support complex business workflows, while collaborating closely with cross-functional teams.'
+    ]
   },
   {
     date: 'August 2023 – October 2023',
     role: 'Backend Engineer Intern',
     company: 'Bridgify',
-    details:
-      'At Bridgify, I worked on backend systems in Python, focusing on API integrations and data processing. I optimized performance, ensured system reliability, and contributed clean, well-documented code to key projects.',
+    description: '',
+    details: [
+      'Maintained backend systems using Python (Requests, Pandas) and integrated APIs.',
+      'Wrote clean, efficient, and well-documented code to enhance system functionality.'
+    ]
   },
 ];
 
@@ -128,23 +135,44 @@ const Experience = () => {
               <div key={index} className="relative flex">
                 {/* Timeline Card */}
                 <div
-                  className={`group relative bg-secondary lg:bg-transparent border-4 rounded-xl border-darkgrey text-lightgrey p-6 transition-all duration-300 hover:rounded-xl hover:border-primary2 lg:hover:scale-110 shadow-lg
+                  className={`group relative bg-secondary lg:bg-transparent border-4 rounded-xl border-darkgrey text-lightgrey p-6 transition-all duration-300 hover:rounded-xl hover:border-primary2 lg:hover:scale-105 shadow-lg min-h-[320px] flex flex-col
                   ${index % 2 === 0
                       ? `timeline-card-left-${index} lg:rounded-tl-none lg:border-l-0 lg:rounded-bl-none translate-x-0 lg:translate-x-1/2 lg:hover:border-l-4`
                       : `timeline-card-right-${index} lg:rounded-tr-none lg:border-r-0 lg:rounded-br-none translate-x-0 lg:-translate-x-1/2 lg:hover:border-r-4`
                     }
                   mx-auto w-full sm:w-[28rem] md:w-[30rem] lg:w-[32rem]`}
                 >
-                  <p className="text-xs text-lightgrey mb-2">{item.date}</p>
-                  <h2 className="text-body1 font-semibold text-white transition-colors duration-300 group-hover:text-primary">
-                    {item.role}
-                  </h2>
-                  <p className="text-sm text-grey mb-4 transition-colors duration-300 group-hover:text-white">
-                    {item.company}
-                  </p>
-                  <p className="text-sm text-lightgrey transition-colors duration-300 group-hover:text-white">
-                    {item.details}
-                  </p>
+                  {/* Header Section */}
+                  <div className="mb-4 border-b border-darkgrey/30 pb-3">
+                    <p className="text-xs text-lightgrey mb-2 font-medium uppercase tracking-wider">{item.date}</p>
+                    <h2 className="text-xl font-bold text-white transition-colors duration-300 group-hover:text-primary mb-2">
+                      {item.role}
+                    </h2>
+                    <p className="text-base text-grey font-semibold transition-colors duration-300 group-hover:text-white">
+                      {item.company}
+                    </p>
+                  </div>
+
+                  {/* Description Section */}
+                  {item.description && (
+                    <div className="mb-5">
+                      <p className="text-sm text-lightgrey italic transition-colors duration-300 group-hover:text-white leading-relaxed bg-darkgrey/20 p-3 rounded-lg border-l-4 border-primary/50">
+                        {item.description}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Details Section - Takes remaining space */}
+                  <div className="flex-1">
+                    <ul className="text-sm text-lightgrey space-y-4 transition-colors duration-300 group-hover:text-white">
+                      {item.details.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="flex items-start leading-relaxed">
+                          <span className="text-primary mr-3 mt-1 flex-shrink-0 text-sm font-bold">▸</span>
+                          <span className="flex-1 text-lightgrey group-hover:text-white transition-colors duration-300">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             ))}

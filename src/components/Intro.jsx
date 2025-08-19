@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { gsap } from 'gsap';
 import PropTypes from 'prop-types';
 import useTailWindConfig from '../hooks/useTailWindConfig';
@@ -8,30 +8,8 @@ const Intro = ({ onIntroComplete }) => {
   const theme = useTailWindConfig();
   const bgColor = theme.colors.secondary;
   const primaryColor = theme.colors.primary;
-  const [shouldShowIntro, setShouldShowIntro] = useState(true);
 
   useEffect(() => {
-    // Check if we should show the intro animation
-    const checkIntroDisplay = () => {
-      const lastShownDate = localStorage.getItem('intro_last_shown');
-      const currentDate = new Date().toDateString();
-
-      if (lastShownDate === currentDate) {
-        // Already shown today, skip animation
-        setShouldShowIntro(false);
-        onIntroComplete();
-        document.body.classList.add('overflow-y-auto');
-        return false;
-      }
-
-      // Store current date as last shown
-      localStorage.setItem('intro_last_shown', currentDate);
-      return true;
-    };
-
-    const shouldProceed = checkIntroDisplay();
-    if (!shouldProceed) return;
-
     const paths = gsap.utils.toArray('#welcome path');
     const logo = document.getElementById('logoz');
     if (logo) logo.style.opacity = 1;
@@ -74,10 +52,6 @@ const Intro = ({ onIntroComplete }) => {
     });
 
   }, [onIntroComplete, bgColor, primaryColor]);
-
-  if (!shouldShowIntro) {
-    return null;
-  }
 
   return (
     <section
